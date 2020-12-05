@@ -22,20 +22,26 @@ public class Range implements IntegerSequence{
 
   //@throws NoSuchElementException
   public int next(){
-    return 0;
+    if(!hasNext()){
+      throw new NoSuchElementException("No more values left");
+    }
+    int c=current;
+    current++;
+    return c;
   }
 
   public static void main(String[] args){
-    IntegerSequence r = new Range(10,20);
+    IntegerSequence r = new Range(10,15);
     System.out.println(r.length());
-    /*
+
     while(r.hasNext()){
-      System.out.print(r.next())
+      System.out.print(r.next());
        if( r.hasNext() )
           System.out.print( ", " );
     }
     System.out.println();
-    */
+    // Expected output:
+    // 10, 11, 12, 13, 14, 15
   }
 
 }
