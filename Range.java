@@ -13,7 +13,7 @@ public class Range implements IntegerSequence{
   }
 
   public int length(){
-    return 0;
+    return end-start+1;
   }
 
   public boolean hasNext(){
@@ -27,6 +27,7 @@ public class Range implements IntegerSequence{
 
   public static void main(String[] args){
     IntegerSequence r = new Range(10,20);
+    System.out.println(r.length());
     /*
     while(r.hasNext()){
       System.out.print(r.next())
