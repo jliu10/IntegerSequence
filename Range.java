@@ -2,21 +2,30 @@ import java.util.NoSuchElementException;
 public class Range implements IntegerSequence{
   private int start,end,current;
 
-  public Range(int start,  int end){
-    start=start;
-    end=end;
+  public Range(int s, int e){
+    start=s;
+    end=e;
+    current=start;
   }
 
-  public void reset(){  }
+  public void reset(){
 
-  public int length(){  }
+  }
 
-  public boolean hasNext(){  }
+  public int length(){
+    return 0;
+  }
+
+  public boolean hasNext(){
+    return true;
+  }
 
   //@throws NoSuchElementException
-  public int next(){    }
+  public int next(){
+    return 0;
+  }
 
-  public void main(String[] args){
+  public static void main(String[] args){
     IntegerSequence r = new Range(10,20);
     /*
     while(r.hasNext()){
