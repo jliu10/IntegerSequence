@@ -21,10 +21,12 @@ public class Range implements IntegerSequence{
   }
 
   //@throws NoSuchElementException
-  public int next(){
+  public int next() throws NoSuchElementException{
+    /*
     if(!hasNext()){
       throw new NoSuchElementException("No more values left");
     }
+    */
     int c=current;
     current++;
     return c;
@@ -32,14 +34,17 @@ public class Range implements IntegerSequence{
 
   public static void main(String[] args){
     IntegerSequence r = new Range(10,15);
-    System.out.println(r.length());
-
+    // System.out.println(r.length());
+    try{
     while(r.hasNext()){
       System.out.print(r.next());
        if( r.hasNext() )
           System.out.print( ", " );
     }
     System.out.println();
+  }catch(NoSuchElementException e){
+    System.out.println("No more values left");
+  }
     // Expected output:
     // 10, 11, 12, 13, 14, 15
   }
