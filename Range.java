@@ -21,12 +21,10 @@ public class Range implements IntegerSequence{
   }
 
   //@throws NoSuchElementException
-  public int next() throws NoSuchElementException{
-    /*
+  public int next(){
     if(!hasNext()){
       throw new NoSuchElementException("No more values left");
-    }
-    */
+    }  
     int c=current;
     current++;
     return c;
